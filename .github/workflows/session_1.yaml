@@ -1,0 +1,41 @@
+name: 'Session 1'
+
+on: push
+
+jobs:
+  session-1:
+    name: 'Set up Rails Application'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install Ruby, Rails
+        uses: ruby/setup-ruby@v1
+        with:
+          working-directory: session_1/hello_world
+          bundler-cache: true
+
+      - name: Check if package.json exists
+        id: check_package_json
+        uses: andstor/file-existence-action@v1
+        with:
+          files: "session_1/hello_world/package.json"
+
+      - name: Install NPM packages
+        if: steps.check_package_json.outputs.files_exists == 'true'
+        uses: bahmutov/npm-install@v1
+        with:
+          working-directory: session_1/hello_world
+
+      - name: Copy Test File
+        working-directory: session_1
+        run: cp page_controller_test.rb hello_world/test/controllers
+
+      - name: Test Rails
+        working-directory: session_1/hello_world
+        run: |
+          bundle exec rails db:create
+          bundle exec rails db:migrate
+          bundle exec rails test
