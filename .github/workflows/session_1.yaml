@@ -4,7 +4,7 @@ on: push
 
 jobs:
   session-1:
-    name: 'Set up Rails Application'
+    name: 'Getting Started with Rails'
     runs-on: ubuntu-latest
 
     steps:

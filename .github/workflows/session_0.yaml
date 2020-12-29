@@ -1,0 +1,31 @@
+name: 'Session 0'
+
+on: push
+
+jobs:
+  session-0:
+    name: 'Learning Ruby'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7
+          working-directory: session_0
+          bundler-cache: true
+
+      - name: Test Fizz Buzz
+        working-directory: session_0
+        run: ruby fizz_buzz_test.rb
+
+      - name: Test Word Processing
+        working-directory: session_0
+        run: ruby word_processing_test.rb
+
+      - name: Test Item
+        working-directory: session_0
+        run: ruby item_test.rb
