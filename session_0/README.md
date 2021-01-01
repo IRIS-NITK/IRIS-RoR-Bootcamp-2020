@@ -15,8 +15,8 @@ Rails. You can refer to books on programming or websites like
 [TryRuby](https://try.ruby-lang.org/) and
 [Learn Ruby the Hard Way](https://learnrubythehardway.org/book/).
 
-> Instructions for installing Ruby and submitting solutions are covered
-> in [Session 1 - Getting Started with Rails](/session_1/README.md)
+> Read the [installation guide](/installation.md) and [setting up local
+> workspace](/essential_git.md) to get started.
 
 ## Fizz Buzz
 
