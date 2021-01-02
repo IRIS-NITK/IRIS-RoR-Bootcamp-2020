@@ -23,73 +23,11 @@ For example, `@abhishekkumar2718`'s website looks like the following:
 
 ## Steps
 
-- Install [Ruby Version Manager (RVM)](http://rvm.io/rvm/install). If
-  you are using Ubuntu, [using the dedicated package](https://github.com/rvm/ubuntu_rvm)
-  is the simplest way to install.
+- [Install Ruby and Rails](/installation.md)
 
-> RVM allows you to easily install, manage and work with multiple ruby
-> environments.
+- [Set Up Local Workplace](/essential_git.md)
 
-- Install Ruby (2.7.2)
-
-```bash
-rvm install ruby-2.7.2
-rvm --default use 2.7.2
-```
-
-- Create and use gemset `session_1`.
-
-```bash
-rvm gemset create session_1
-rvm use 2.7.1@session_1
-```
-
-> A `gemset` is an isolated ruby setup. For example, you isolate two
-> projects using Rails 5 and Rails 6 isolated from each other
-> using a gemset.
-
-> NOTE: Always switch to the appropriate gemset when working on a
-> project. You can use a [project rvmrc](https://rvm.io/workflow/rvmrc)
-> to automate this process.
-
-- Install Bundler (2.2.0) and Rails (6.1.0)
-
-```
-gem install bundler --version 2.2.0
-gem install rails --version 6.1.0
-```
-
-> While you can use different versions of Ruby, Bundler and Rails - we
-> recommend using the provided versions as subsequent exercises are
-> created and tested with the provided versions.
-
-- Install [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
-
-> Git is a software designed for coordinating work among programmers and
-> tracking changes. We will be using Git to coordinate with other developers
-> (i.e. Bootcamp mentors) by downloading and uploading exercises.
-> Atlassian has great [Git Tutorials and Training](https://www.atlassian.com/git/tutorials).
-
-- Clone and change directory into the repository
-
-```bash
-git clone https://github.com/abhishekkumar2718/IRIS-RoR-Bootcamp-2020.git
-cd IRIS-RoR-Bootcamp-2020
-```
-
-> In Git terminology, a _repository_ is an independent project.
-> _Cloning a repository_ is to make a copy of an existing project.
-> Here, we are downloading the RoR bootcamp exercises.
-
-- Create and checkout to a new branch `session_1_<your_name>`. For example:
-
-```bash
-git checkout -b session_1_abhishek_kumar
-```
-
-> A _branch_ represents an independent line of development. Thus,
-> working in branches will help seperate your solutions from other
-> student's solution as well as different sessions from each other.
+### Create a Rails Project
 
 - Create a new Rails project `hello_world` in the directory `session_1`:
 
@@ -123,6 +61,8 @@ rails server
 
 You should see **Yay! You're on Rails!**:
 ![Yay! You're on Rails!](https://guides.rubyonrails.org/images/getting_started/rails_welcome.png)
+
+### Customize Your Website
 
 - Generate a new controller `PageController` with actions `root` and
   `about_me`:
@@ -188,20 +128,4 @@ rails test
 
 - If the test fails, check the view files and debug the application.
 
-- Once the test works locally, commit your changes and push:
-
-```
-git add .
-git commit -m 'Solution for Session 1'
-# Insert your branch name in the below command
-git push --set-upstream origin session_1_abhishek_kumar 
-```
-
-> Submitting solutions to the repository is optional but highly
-> recommended. Mentors can review your code, suggest improvements and
-> applaud you for a job well done!
-
-- Create a pull request through https://github.com/abhishekkumar2718/IRIS-RoR-Bootcamp-2020/pulls.
-
-- If you have doubts, you can also comment on the pull request and
-  request review from mentors (`abhishekkumar2718`, `yash-m-agrawal`).
+- Once the test works locally, [submit your changes](/essential_git.md).
