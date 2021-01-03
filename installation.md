@@ -4,7 +4,22 @@ If you are using Windows, try and install Ubuntu (or your preferred
 flavor of linux distributions). If that's not possible, consider
 installing Ubuntu on a virtual machine as [discussed here](https://itsfoss.com/install-linux).
 
-- Install [Ruby Version Manager (RVM)](http://rvm.io/rvm/install). If
+### In case you are using Mac OS,follow below commands
+#### Install Xcode tools
+
+Install Xcode from the MacApp Store if you haven't already.
+[Refer this in case of any issues](https://stackoverflow.com/questions/9329243/xcode-install-command-line-tools)
+#### Install HomeBrew
+HomeBrew is a package manager for Mac and helps organise the packages you install.
+Enter the following command in the terminal to install HomeBrew if you haven't already
+`/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+#### Install `gnupg`
+```bash
+brew install gnupg
+```
+
+## Below steps are common to Linux and MacOS
+Install [Ruby Version Manager (RVM)](http://rvm.io/rvm/install). If
   you are using Ubuntu, using [the dedicated package](https://github.com/rvm/ubuntu_rvm) is the simplest way to install.
 
 > RVM allows you to easily install, manage and work with multiple ruby
