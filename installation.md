@@ -19,8 +19,14 @@ brew install gnupg
 ```
 
 ## Below steps are common to Linux and MacOS
-Install [Ruby Version Manager (RVM)](http://rvm.io/rvm/install). If
-  you are using Ubuntu, using [the dedicated package](https://github.com/rvm/ubuntu_rvm) is the simplest way to install.
+Install [Ruby Version Manager (RVM)](http://rvm.io/rvm/install).
+You can install RVM by running the following commands:
+```bash
+gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+curl -sSL https://rvm.io/mpapis.asc | gpg --import -
+curl -sSL https://get.rvm.io | bash -s stable
+```
+You can also install the [ubuntu apt package](https://github.com/rvm/ubuntu_rvm), but the process is quite complex if messed up. We recommend you to install it by following the commands mentioned above.
 
 > RVM allows you to easily install, manage and work with multiple ruby
 > environments.
