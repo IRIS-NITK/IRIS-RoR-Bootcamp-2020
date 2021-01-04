@@ -1,6 +1,6 @@
 name: 'Session 0'
 
-on: push
+on: [push, pull_request]
 
 jobs:
   session-0:
