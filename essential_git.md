@@ -12,8 +12,7 @@ Atlassian tutorials: https://www.atlassian.com/git/tutorials
 ## Setting Up Local Workspace
 
 - Install [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
-- Once you are done settung up git, you will need to fork this repo & work on your forked repo.
-- You can follow the [official docs](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo) to learn how to fork a repo.
+- Once you are done setting up git, you will need to fork this repo & work on your forked repo. You can follow the [official docs](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo) to learn how to fork a repo.
 
 - Clone and change directory into the repository
 
