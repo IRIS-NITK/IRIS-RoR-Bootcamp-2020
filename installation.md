@@ -72,6 +72,15 @@ ruby --version    # 2.7.2
 bundler --version # 2.2.0
 rails --version   # 6.1.0
 ```
-
+* Finally, you'll need `Node.js` and `Yarn` installed to manage your application's JavaScript. So you can install `nodejs` by running the following command:
+```bash
+sudo apt install nodejs
+```
+* We need `yarn` for `webpacker` which is the Rails version of `webpack`. `webpack` is used to compile your application's JavaScript that's placed in `app/javascript`. To [install yarn](https://classic.yarnpkg.com/en/docs/install/#debian-stable) run the following commands:
+```bash
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt update && sudo apt install yarn
+```
 If everything is installed correctly, you are ready to [get started with
 Rails](/session_1/README.md).
