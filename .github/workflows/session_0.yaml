@@ -1,10 +1,9 @@
-name: 'Session 0'
-
+name: 'Session 0: Learning Ruby'
 on: [push, pull_request]
 
 jobs:
-  session-0:
-    name: 'Learning Ruby'
+  test-fizz-buzz:
+    name: 'Test Fizz Buzz task'
     runs-on: ubuntu-latest
 
     steps:
@@ -18,13 +17,43 @@ jobs:
           working-directory: session_0
           bundler-cache: true
 
-      - name: Test Fizz Buzz
+      - name: Run fizz_buzz_test
         working-directory: session_0
         run: ruby fizz_buzz_test.rb
+  
+  test-word-processing:
+    name: 'Test Word Processing task'
+    runs-on: ubuntu-latest
 
-      - name: Test Word Processing
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7
+          working-directory: session_0
+          bundler-cache: true
+
+      - name: Run word_processing_test
         working-directory: session_0
         run: ruby word_processing_test.rb
+  
+  test-items:
+    name: 'Test Items Task'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7
+          working-directory: session_0
+          bundler-cache: true
 
       - name: Test Item
         working-directory: session_0
