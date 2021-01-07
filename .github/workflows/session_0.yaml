@@ -22,10 +22,12 @@ jobs:
         working-directory: session_0
         run: ruby fizz_buzz_test.rb
 
-      - name: Test Word Processing
+      - name: Test Word Processing            
+        if: ${{ always() }}
         working-directory: session_0
         run: ruby word_processing_test.rb
 
       - name: Test Item
+        if: ${{ always() }}
         working-directory: session_0
         run: ruby item_test.rb
