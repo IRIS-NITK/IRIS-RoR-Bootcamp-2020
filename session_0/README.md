@@ -17,6 +17,8 @@ Rails. You can refer to books on programming or websites like
 
 > Read the [installation guide](/installation.md) and [setting up local
 > workspace](/essential_git.md) to get started.
+>
+> You can also read the [solution](https://github.com/IRIS-NITK/IRIS-RoR-Bootcamp-2020/pull/62) here.
 
 ## Fizz Buzz
 

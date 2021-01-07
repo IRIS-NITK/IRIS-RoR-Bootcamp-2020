@@ -37,5 +37,20 @@
 # We will raise an `ArgumentError` exception to let the caller know that
 # their function arguments were incorrect.
 def fizz_buzz(n:, x: 3, y: 5)
-  raise NotImplementedError # TODO
+  raise ArgumentError if n < 0 || x <= 0 || y <= 0
+  # map construct helps us transform the contents of arrays, ranges and hash
+  (1..n).map do |i|
+    if i % x == 0 && i % y == 0
+      'FizzBuzz'
+    elsif i % x == 0
+      'Fizz'
+    elsif i % y == 0
+      'Buzz'
+    else
+      i.to_s
+    end
+  end
+  # Note ruby methods implicitly return the value of the last executed intructions
+  # In this case the modified range
+  # Read mode about it here https://cutt.ly/XjlMYhJ
 end
