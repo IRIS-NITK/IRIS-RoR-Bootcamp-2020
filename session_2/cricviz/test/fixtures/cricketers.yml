@@ -1,0 +1,86 @@
+david_warner:
+  name: 'David Warner'
+  role: 'Batter'
+  country: 'Australia'
+  matches: 85
+
+steve_smith:
+  name: 'Steve Smith'
+  role: 'Batter'
+  country: 'Australia'
+  matches: 76
+
+cameron_green:
+  name: 'Cameron Green'
+  role: 'All-rounder'
+  country: 'Australia'
+  matches: 2
+  innings_batted: 4
+  runs_scored: 68
+  not_out: 0
+  high_score: 47
+  balls_faced: 251
+  fours_scored: 6
+
+mitchell_starc:
+  name: 'Mitchell Starc'
+  role: 'Bowler'
+  country: 'Australia'
+  matches: 60
+
+pat_cummins:
+  name: 'Pat Cummins'
+  role: 'Bowler'
+  country: 'Australia'
+  matches: 33
+
+nathan_lyon:
+  name: 'Nathan Lyon'
+  role: 'Bowler'
+  country: 'Australia'
+  matches: 99
+
+rohit_sharma:
+  name: 'Rohit Sharma'
+  role: 'Batter'
+  country: 'India'
+  matches: 33
+
+ajinkya_rahane:
+  name: 'Ajinkya Rahane'
+  role: 'Batter'
+  country: 'India'
+  matches: 68
+
+humana_vihari:
+  name: 'Hanuma Vihari'
+  role: 'Batter'
+  country: 'India'
+  matches: 12
+
+ravichandran_ashwin:
+  name: 'Ravichandran Ashwin'
+  role: 'Bowler'
+  country: 'India'
+  matches: 74
+
+ravindra_jadeja:
+  name: 'Ravindra Jadeja'
+  role: 'All-rounder'
+  country: 'India'
+  matches: 51
+
+jasprit_bumrah:
+  name: 'Jasprit Bumrah'
+  role: 'Bowler'
+  country: 'India'
+  matches: 17
+  innings_bowled: 24
+  balls_bowled: 3637
+  runs_given: 1640
+  wickets_taken: 77
+
+mohammed_amir:
+  name: 'Mohammed Amir'
+  role: 'Bowler'
+  country: 'Pakistan'
