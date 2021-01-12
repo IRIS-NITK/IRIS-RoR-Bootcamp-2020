@@ -1,0 +1,56 @@
+name: 'Session 2'
+
+on: [push, pull_request]
+
+jobs:
+  creating_tables:
+    name: Creating Tables
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install Ruby, Rails
+        uses: ruby/setup-ruby@v1
+        with:
+          working-directory: session_2/student_registry
+          bundler-cache: true
+
+      - name: Install NPM packages
+        uses: bahmutov/npm-install@v1
+        with:
+          working-directory: session_2/student_registry
+
+      - name: Test Student Table
+        working-directory: session_2/student_registry
+        run: |
+          bundle exec rails db:create
+          bundle exec rails db:migrate
+          bundle exec rails test:models
+
+  working_with_records:
+    name: Working With Records
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install Ruby, Rails
+        uses: ruby/setup-ruby@v1
+        with:
+          working-directory: session_2/cricviz
+          bundler-cache: true
+
+      - name: Install NPM packages
+        uses: bahmutov/npm-install@v1
+        with:
+          working-directory: session_2/cricviz
+
+      - name: Test Cricketer Model
+        working-directory: session_2/cricviz
+        run: |
+          bundle exec rails db:create
+          bundle exec rails db:migrate
+          bundle exec rails test:models
