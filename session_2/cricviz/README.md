@@ -30,8 +30,6 @@ Border-Gavaskar series!
 - [Prepare Local Database](/session_2/README.md) in the `cricviz`
   folder.
 
-- Run the migration.
-
 The schema file (`db/schema.rb`) should show:
 
 ```ruby
@@ -67,6 +65,16 @@ end
 The schema indicates that we have one table `cricketers` with many, many
 columns - each indicating a different stats associated with the player.
 The column names will be the attributes that we can use in our class.
+
+- [Load the sample data](https://brandonhilkert.com/blog/using-rails-fixtures-to-seed-a-database/)
+
+```bash
+rails db:fixtures:load
+```
+
+_Fixtures_ is a fancy word for sample data. The above command loads
+sample data into our development database for trying out our code. You
+can check out fixtures through rails console.
 
 ### Creating Records
 
