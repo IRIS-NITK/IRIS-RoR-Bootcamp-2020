@@ -75,3 +75,20 @@ In this sub-task, we will work on statistics from Cricket and hope to
 crack the problem of winning the fourth test match in Border-Gavaskar
 series! Head over to [Cricviz](cricviz/README.md) directory to learn
 more.
+
+
+## Interactive Console
+
+The Rails console is useful for testing out quick ideas with code and
+debugging applications.
+
+```bash
+rails console
+```
+
+This should open a console, similar to IRB in the first session. We can
+access your model functions and execute any valid ruby code.
+
+![Interactive Console](screenshots/interactive_console.png)
+
+- [The Rails Command Line](https://guides.rubyonrails.org/command_line.html#bin-rails-console)
