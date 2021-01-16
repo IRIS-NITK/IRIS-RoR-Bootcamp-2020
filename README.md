@@ -27,3 +27,10 @@ new Rails project and build a simple "About Me" webiste with two pages.
 In the second session, we take a closer look at _Model_ of the MVC
 Architecture and talk about databases, migrations and working with
 records.
+
+## [Session 3 - Controllers and Routing](/session_3/README.md)
+
+In the third session, we take a closer look at _Controller_ of the MVC
+Architecture and talk about controllers, routing, authentication and
+authorization. In the assignment, we will build a simple blogging
+website.
