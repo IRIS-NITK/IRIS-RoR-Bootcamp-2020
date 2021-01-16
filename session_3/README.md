@@ -400,17 +400,74 @@ rails generate migration add_authorization_columns_articles_table user_id:intege
   attribute.
 
 ```erb
+<%= form_with(model: article) do |form| %>
+  <% if article.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h2>
+
+      <ul>
+        <% article.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :topic %>
+    <%= form.text_field :topic %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tags %>
+    <%= form.text_field :tags %>
+  </div>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_area :content %>
+  </div>
+
+  <div class="field">
+    <%= form.label :public %>
+    <%= form.check_box :public %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
 ```
 
 - Permit values assigned to `public` attribute to used for mass
-  assignment.
+  assignment by updating `article_params` function in
+  `app/controllers/articles_controller.rb`.
 
 ```
+def article_params
+  params.require(:article).permit(:title, :topic, :tags, :content, :public)
+end
 ```
 
-- Assign user id to a new Article when it is being created.
+- Assign user id to a new Article when it is being created by updating
+  `create` function in `app/controllers/articles_controller.rb`
 
 ```ruby
+def create
+  @article = Article.new(article_params)
+  @article.user_id = current_user.id
+
+  if @article.save
+    redirect_to @article, notice: 'Article was successfully created.'
+  else
+    render :new
+  end
+end
 ```
 
 #### Adding Authorization
