@@ -489,6 +489,10 @@ We can check the current user's permission using:
 <% end %>
 ```
 
+> Once done, you can submit your code changes and create a pull request.
+> There are no automated tests for the session although you can add
+> screenshots of the website in the pull request description.
+
 #### Bonus Tasks
 
 - Extend the authorization in a similar sense to `UsersController` to
