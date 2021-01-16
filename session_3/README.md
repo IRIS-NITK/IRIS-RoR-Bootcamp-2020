@@ -170,7 +170,7 @@ Since we want model, controllers and views for the Article class, we
 will use `rails scaffold` to get started.
 
 ```
-rails generate scaffold Article name:string content:text user_id:integer public:true
+rails generate scaffold Article name:string content:text
 ```
 
 The above command generates the following important files:
