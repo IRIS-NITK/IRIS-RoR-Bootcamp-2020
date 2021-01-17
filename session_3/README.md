@@ -223,7 +223,7 @@ gem 'bcrypt'
   well.
 
 ```
-rails generate User name:string email:uniq password:digest
+rails generate scaffold User name:string email:uniq password:digest
 ```
 
 After running the migration and opening `http://localhost:3000/users`,
