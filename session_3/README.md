@@ -499,6 +499,8 @@ class Ability
 
   def initialize(user)
     # All users
+    can :index, Article
+    
     # Can read public articles
     can :show, Article, public: true
 
