@@ -369,7 +369,7 @@ end
       <%= link_to 'Log Out', logout_path %>
     <% else %>
       <%= link_to 'Sign Up', signup_path %>
-      <%= link_to 'Log In', login_path %>
+      <%= link_to 'Log In', login_path, method: :delete %>
     <% end %>
   </body>
 
