@@ -301,7 +301,7 @@ end
 
 <h1>Login</h1>
 
-<%= form_with sessions_path, remote: false do |f| %>
+<%= form_with url: sessions_path do |f| %>
   <div class="field">
     <%= f.label :email %>
     <%= f.email_field :email %>
