@@ -484,7 +484,7 @@ As writing forms can be cumbersome, we will be using the gem
 - Add `bootstrap_form` to your Gemfile:
 
 ```ruby
-gem 'bootstrap_form', '-> 4.0'
+gem 'bootstrap_form', '~> 4.0'
 ```
 
 - Run `bundle install`
