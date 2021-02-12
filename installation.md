@@ -1,8 +1,23 @@
 # Installing Ruby, Rails
 
-If you are using Windows, try and install Ubuntu (or your preferred
-flavor of linux distributions). If that's not possible, consider
-installing Ubuntu on a virtual machine as [discussed here](https://itsfoss.com/install-linux).
+## Installing Ubuntu
+
+If you are using Windows, try and dual boot the LTS version of Ubuntu
+(that is, Ubuntu 20.04) or your preferred flavor of Linux distributions. 
+_Dual boooting_ installs multiple operating systems - in this case,
+Windows and Ubuntu. Every time you power on your device, you can decide
+the operating system you want to use.
+
+If that's not possible, consider installing Ubuntu on a virtual machine.
+By using a Virtual Machine, you can run Ubuntu within Windows like any
+other application.
+
+> Using a Virtual Machine can be slow, especially if you allocate less
+> than 4 GB RAM. Try dual-booting in such cases.
+
+- [Download ISO for Ubuntu 20.04](http://www.releases.ubuntu.com/20.04/).
+- [How To Install Ubuntu 20.04](https://itsfoss.com/install-linux).
+- [How To Install Ubuntu Alongside Windows in Dual-Boot](https://www.tecmint.com/install-ubuntu-alongside-with-windows-dual-boot/).
 
 ### In case you are using Mac OS,follow below commands
 #### Install Xcode tools
