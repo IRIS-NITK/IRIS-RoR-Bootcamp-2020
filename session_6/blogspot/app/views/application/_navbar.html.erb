@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <%= link_to 'BlogSpot', root_path, class: 'navbar-brand' %>
+
+  <button 
+     class="navbar-toggler" 
+     type="button"
+     data-toggle="collapse"
+     data-target="#navbarSupportedContent"
+     aria-controls="navbarSupportedContent"
+     aria-expanded="false"
+     aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <%= form_with url: search_articles_path, method: :get, remote: true, class: 'form-inline' do |f| %>
+        <%= f.text_field :search, placeholder: 'Search', id: 'navbar-autocomplete', class: 'form-control mr-sm-2' %>
+      <% end %>
+
+      <li class="nav-item">
+        <%= link_to 'All Articles', articles_path, class: 'nav-link' %>
+      </li>
+
+      <% if can? :new, Article %>
+        <li class="nav-item">
+          <%= link_to 'New Article', new_article_path, class: 'nav-link' %>
+        </li>
+      <% end %>
+
+      <% if current_user %>
+        <li class="nav-item">
+          <%= link_to 'Your Profile', current_user, class: 'nav-link' %>
+        </li>
+
+        <li class="nav-item">
+          <%= link_to 'Log Out', logout_path, method: :delete, class: 'nav-link' %>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to 'Sign Up', signup_path, class: 'nav-link' %>
+        </li>
+
+        <li class="nav-item">
+          <%= link_to 'Log In', login_path, class: 'nav-link' %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</nav>

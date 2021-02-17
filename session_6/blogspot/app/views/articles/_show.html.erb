@@ -1,0 +1,24 @@
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title text-center"><%= article.title %></h4>
+    <h6 class="card-subtitle text-center mb-2 text-muted"><%= article.tags %></h6>
+
+    <% article.paragraphs.each do |paragraph| %>
+      <p class="card-text"><%= paragraph %></p>
+    <% end %>
+
+    <%= link_to 'Back', articles_path, class: 'btn btn-primary' %>
+
+    <% if can? :edit, article %>
+      <%= link_to 'Edit Article', edit_article_path(article), class: 'btn btn-warning' %>
+    <% end %>
+
+    <% if can? :destroy, article %>
+      <%= link_to 'Delete Article', article, method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure?'} %>
+    <% end %>
+  </div>
+
+  <div class="card-footer text-muted">
+    Uploaded by <u><%= article.author.name %></u> <%= time_ago_in_words(article.created_at) %> ago.
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<% width_mapping = {1 => '25', 2 => '50', 3 => '75', 4 => '100'} %>
+
+<% @articles.in_groups_of(4, false) do |article_group| %>
+  <% wrapper_width = "w-#{width_mapping[article_group.length]}" %>
+
+  <div class="card-deck mb-2 <%= wrapper_width %>">
+    <% article_group.each do |article| %>
+      <div class="card">
+        <% if article.cover_photo.attached? %>
+          <%= image_tag article.cover_photo, class: 'img-responsive card-img-top', size: '200x200' %>
+        <% end %>
+
+        <div class="card-body">
+          <h5 class="card-title"><%= article.title %></h5>
+          <h6 class="card-subtitle mb-2 text-muted"><%= article.tags %></h6>
+
+          <p class="card-text">
+            <%= article.content[0, 200] %>
+            <%= '...' if article.content.size > 200 %>
+          </p>
+
+          <%= link_to 'Read more', article, class: 'btn btn-primary', remote: true, data: {disable_with: 'Loading...'} %>
+        </div>
+
+        <div class="card-footer text-muted">
+          Uploaded by <u><%= article.author.name %></u> <%= time_ago_in_words(article.created_at) %> ago.
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
+<%= paginate @articles, remote: true %>
