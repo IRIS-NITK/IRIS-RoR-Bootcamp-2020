@@ -1,0 +1,35 @@
+<%= bootstrap_form_with(model: article, layout: :horizontal, local: false) do |form| %>
+  <% if article.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h2>
+
+      <ul>
+        <% article.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form.text_field :title, placeholder: 'Enter title of the article' %>
+
+  <%= form.text_field :tags, placeholder: 'Enter tags of the article'  %>
+
+  <%= form.text_field :topic, placeholder: 'Enter topic of the article' %>
+
+  <%= form.text_area :content, placeholder: 'Enter contents of the article' %>
+
+  <% if !article.cover_photo.attached? %>
+    <%= form.file_field :cover_photo, help: 'Prefer images with scale ratio 1:1' %>
+  <% end %>
+
+  <%= form.form_group :public do %>
+    <%= form.check_box :public, custom: :switch do %>
+       Can be read by unregistered users
+    <% end %>
+  <% end %>
+
+  <div class="text-center">
+    <%= form.submit nil, class: 'btn btn-primary', data: {disable_with: 'Submitting...'} %>
+  </div>
+<% end %>

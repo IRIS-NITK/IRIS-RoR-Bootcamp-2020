@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blogspot</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= render partial: 'navbar' %>
+
+    <div id="toastr-success">
+    </div>
+
+    <div class="container pt-2" id="main-content">
+      <%= yield %>
+    </div>
+
+    <% if flash.any? %>
+      <script>
+        <% if flash[:alert] %>
+          toastr.error('<%= flash[:alert] %>');
+        <% elsif flash[:notice] %>
+          toastr.success('<%= flash[:notice] %>');
+        <% end %>
+      </script>
+    <% end %>
+  </body>
+</html>

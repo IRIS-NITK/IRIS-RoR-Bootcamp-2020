@@ -1,0 +1,16 @@
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title text-center">Login</h4>
+
+    <%= bootstrap_form_with url: sessions_path, layout: :horizontal do |f| %>
+      <%= f.email_field :email, placeholder: 'Enter your e-mail address' %>
+      <%= f.password_field :password, placeholder: 'Enter your password' %>
+
+      <div class="text-center">
+        <%= f.submit 'Login', class: 'btn btn-primary' %>
+      </div>
+    <% end %>
+
+    <%= link_to "Create a new account", signup_path, class: 'btn btn-primary' %>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<% if @article.persisted? %>
+    $("#main-content").html("<%= j render partial: 'show', locals: {article: @article} %>");
+    toastr.success('Article was successfully created.')
+<% else %>
+    toastr.error('Unable to create article')
+    $("#main-content").html("<%= j render partial: 'new', locals: {article: @article} %>");
+<% end %>

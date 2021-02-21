@@ -1,0 +1,9 @@
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title text-center">Register</h4>
+
+    <%= render partial: 'form', locals: {user: @user} %>
+
+    <%= link_to 'All Users', users_path, class: 'btn btn-primary' %>
+  </div>
+</div>

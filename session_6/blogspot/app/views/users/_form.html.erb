@@ -1,0 +1,60 @@
+<%= bootstrap_form_with(model: user, layout: :horizontal) do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+        <% user.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form.text_field :name, placeholder: 'Enter your name', required: true %>
+
+  <div class="form-group row">
+    <%= form.label :email, class: 'col-form-label col-sm-2 required' %>
+
+    <div class="col-sm-10">
+      <%= form.email_field :email, placeholder: 'Enter your e-mail address', id: 'email-field', required: true, wrapper: false %>
+
+      <div class="valid-feedback">Looks good!</div>
+      <div class="invalid-feedback">E-mail has already been taken. Please try a different e-mail.</div>
+    </div>
+  </div>
+
+  <%= form.password_field :password, placeholder: 'Enter your password', required: true %>
+
+  <%= form.password_field :password_confirmation, placeholder: 'Enter your password again', required: true %>
+
+  <div class="text-center">
+    <%= form.primary %>
+  </div>
+<% end %>
+
+<script>
+  var url = new URL('<%= validate_email_users_url %>');
+  var field = $("#email-field");
+
+  field.change(async function(){
+    // If the field is not filled or has an invalid e-mail address
+    if (!field.is(':valid')) 
+        return;
+
+    params = {email: field.val()};
+    url.search = new URLSearchParams(params).toString();
+
+    let response = await fetch(url);
+
+    if (response.ok) {
+      let json = await response.json();
+
+      if (json.message == 'unique')
+        field.removeClass('is-invalid').addClass('is-valid');
+      else
+        field.removeClass('is-valid').addClass('is-invalid');
+    } else
+      alert("HTTP-Error: " + response.status);
+  });
+</script>

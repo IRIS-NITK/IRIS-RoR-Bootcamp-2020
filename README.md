@@ -49,6 +49,16 @@ After learning about about MVC architecture and implementing different
 layers in Rails code, we will take a look at some of useful concepts in
 practical web development - _associations_ and _validations_.
 
+## [Session 6 - JavaScript and Ajax](/session_6/README.md)
+
+_Asynchronous JavaScript and XML_ is an apporach to build web
+applications that are able to make quick, incremental updates to the
+user interface without reloading the entire browser page.
+
+We will be using JavaScript and AJAX to improve the user experience of
+BlogSpot, our blogging website by implementing features like
+autocomplete, form validation and more.
+
 ## What's Next?
 
 By the end of the bootcamp, you have learnt the useful day-to-day

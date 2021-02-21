@@ -1,0 +1,9 @@
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title text-center">New Article</h4>
+
+    <%= render partial: 'form', locals: {article: article} %>
+
+    <%= link_to 'All Articles', articles_path, class: 'btn btn-primary' %>
+  </div>
+</div>
