@@ -59,6 +59,8 @@ We will be using JavaScript and AJAX to improve the user experience of
 BlogSpot, our blogging website by implementing features like
 autocomplete, form validation and more.
 
+## [Interview Questions](/interview_questions.md)
+
 ## What's Next?
 
 By the end of the bootcamp, you have learnt the useful day-to-day
